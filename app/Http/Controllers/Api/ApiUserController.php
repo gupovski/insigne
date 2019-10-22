@@ -52,7 +52,7 @@ class ApiUserController extends Controller
             'last_name'=>'required_with:first_name|required_with:middle_name',
             'middle_name'=>'required_with:first_name|required_with:last_name',
             'email'=>'email',
-            'subscribe_end'=>'date',
+            'subscribe_end'=>'date|nullable',
         ]);
 
         $user->login = $request->get('login');
@@ -71,6 +71,7 @@ class ApiUserController extends Controller
         }
 
         $user->save();
+
         Cache::forget('users');
 
         return response()->json('success', 201);

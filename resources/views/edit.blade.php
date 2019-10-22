@@ -32,7 +32,7 @@
         <div class="form-group">
             <label>Дата окончания подписки</label>
             <div class='input-group date' id='datetimepicker2'>
-                <input name="subscribe_end" value="{{ $user->getSubscribeEnd($user->id) }}" type='text' class="form-control" />
+                <input name="subscribe_end" value="{{ $subscribe }}" type='text' class="form-control"  autocomplete="off" title="Дата окончания подписки"/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
